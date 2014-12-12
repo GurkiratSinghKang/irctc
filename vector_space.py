@@ -54,6 +54,7 @@ def captchacker():
 	im = Image.open("captcha.jpg")
 	im = im.convert("P")
 	im2 = Image.new("P",im.size,255)
+	print im
 	im = im.convert("P")
 
 	temp = {}
@@ -103,8 +104,8 @@ def captchacker():
   	  for x,y in image.iteritems():
   	    if len(y) != 0:
 
-  	      print y
-  	      guess.append( ( v.relation(y[0][0],buildvector(im3)),x) )
+  	      print y[0]
+  	      guess.append( ( v.relation(y[0],buildvector(im3)),x) )
 
  	 guess.sort(reverse=True)
  	 print "",guess[0][1]
